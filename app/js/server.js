@@ -27,5 +27,63 @@
     day : String,
     stars : String,
     back : String
+  });
 
+// routes ======================================================================
+// listen (start app with node server.js) ======================================
+  // api ---------------------------------------------------------------------
+  // get all todos
+  app.get('/api/dates', function(req, res) {
+
+    // use mongoose to get all todos in the database
+    Date.find(function(err, dates) {
+
+      // if there is an error retrieving, send the error. nothing after res.send(err) will execute
+      if (err)
+        res.send(err)
+
+      res.json(dates); // return all todos in JSON format
+    });
+  });
+
+  // create todo and send back all todos after creation
+  app.post('/api/dates', function(req, res) {
+
+    // create a todo, information comes from AJAX request from Angular
+    Date.create({
+      name : req.body.text,
+      place : req.body.text,
+      day : req.body.text,
+      stars : req.body.text,
+      back : req.body.text,
+      done : false
+    }, function(err, date) {
+      if (err)
+        res.send(err);
+
+      // get and return all the todos after you create another
+      Date.find(function(err, dates) {
+        if (err)
+          res.send(err)
+        res.json(dates);
+      });
+    });
+
+  });
+
+  // delete a todo
+  app.delete('/api/dates/:date_id', function(req, res) {
+    Date.remove({
+      _id : req.params.date_id
+    }, function(err, date) {
+      if (err)
+        res.send(err);
+
+      // get and return all the todos after you create another
+      Date.find(function(err, dates) {
+        if (err)
+          res.send(err)
+        res.json(dates);
+      });
+    });
   });

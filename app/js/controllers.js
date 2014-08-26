@@ -1,12 +1,22 @@
 'use strict';
 
+
+
+
+
+
+
+
+
+
+
 /* Controllers */
 
 var banana = angular.module('myApp.controllers', [])
 
 banana.controller('MyCtrl1', ['$scope','$http', function($scope, $http) {
     //this == controller
-    $http.get('dates/dates.json').success(function(data){
+    $http.get('/api/dates').success(function(data){
       this.dates = data;
     }.bind(this));
 
