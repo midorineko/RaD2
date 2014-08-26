@@ -44,6 +44,89 @@ router.get('/', function(req, res) {
 // });
 // more routes for our API will happen here
 
+
+// on routes that end in /dates
+// ----------------------------------------------------
+router.route('/dates')
+
+  // create a date (accessed at POST http://localhost:8080/api/dates)
+  .post(function(req, res) {
+
+    var date = new Date();    // create a new instance of the date model
+    date.name = req.body.name,
+    date.place = req.body.place,
+    date.day = req.body.day,
+    date.stars = req.body.stars,
+    date.back = req.body.back;
+
+    // save the bear and check for errors
+    date.save(function(err) {
+      if (err)
+        res.send(err);
+
+      res.json({ message: 'Date created!' });
+    });
+
+  })
+
+  // get all the date >chained to post< (accessed at GET http://localhost:8080/api/bears)
+  .get(function(req, res) {
+    Date.find(function(err, dates) {
+      if (err)
+        res.send(err);
+
+      res.json(dates);
+    });
+  });
+
+
+
+  //specific date routes
+  router.route('/dates/:date_id')
+
+  // get the bear with that id (accessed at GET http://localhost:8080/api/bears/:bear_id)
+  .get(function(req, res) {
+    Date.findById(req.params.date_id, function(err, date) {
+      if (err)
+        res.send(err);
+      res.json(date);
+    });
+  })
+
+    // // use our date model to find the date we want
+    // remember to remove the semi colin if you want to use this
+  // .put(function(req, res) {
+
+    // Date.findById(req.params.date_id, function(err, date) {
+
+    //   if (err)
+    //     res.send(err);
+
+    //   date.name = req.body.name;  // update the bears info
+
+    //   // save the date
+    //   date.save(function(err) {
+    //     if (err)
+    //       res.send(err);
+
+    //     res.json({ message: 'Date updated!' });
+    //   });
+
+    // });
+  // });
+
+//this is delete, remember remove the semi colin
+.delete(function(req, res) {
+    Date.remove({
+      _id: req.params.date_id
+    }, function(err, date) {
+      if (err)
+        res.send(err);
+
+      res.json({ message: 'Successfully deleted' });
+    });
+  });
+
 // REGISTER OUR ROUTES -------------------------------
 // all of our routes will be prefixed with /api
 app.use('/api', router);
