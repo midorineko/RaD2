@@ -1,11 +1,19 @@
 {
-  "name": "angular-seed",
-  "private": true,
-  "version": "0.0.0",
-  "description": "A starter project for AngularJS",
-  "repository": "https://github.com/angular/angular-seed",
-  "license": "MIT",
+  "name"         : "node-rad2",
+  "version"      : "0.0.0",
+  "description"  : "RateaDate2",
+  "author"       : "englishMuffin",
+    "dependencies" : {
+    "express"    : "~4.7.2",
+    "mongoose"   : "~3.6.2",
+    "morgan"   : "~1.2.2",
+  "body-parser": "~1.5.2",
+  "method-override": "~2.1.2"
+    },
   "devDependencies": {
+    "express"    : "~4.7.2",
+    "mongoose"   : "~3.6.2",
+    "morgan"   : "~1.2.2",
     "karma": "~0.10",
     "protractor": "~0.20.1",
     "http-server": "^0.6.1",
