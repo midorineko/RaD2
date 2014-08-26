@@ -91,7 +91,7 @@ router.route('/dates')
         res.send(err);
       res.json(date);
     });
-  })
+  });
 
     // // use our date model to find the date we want
     // remember to remove the semi colin if you want to use this
@@ -116,16 +116,16 @@ router.route('/dates')
   // });
 
 //this is delete, remember remove the semi colin
-.delete(function(req, res) {
-    Date.remove({
-      _id: req.params.date_id
-    }, function(err, date) {
-      if (err)
-        res.send(err);
+// .delete(function(req, res) {
+//     Date.remove({
+//       _id: req.params.date_id
+//     }, function(err, date) {
+//       if (err)
+//         res.send(err);
 
-      res.json({ message: 'Successfully deleted' });
-    });
-  });
+//       res.json({ message: 'Successfully deleted' });
+//     });
+//   });
 
 // REGISTER OUR ROUTES -------------------------------
 // all of our routes will be prefixed with /api
