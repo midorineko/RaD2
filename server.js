@@ -53,10 +53,11 @@ router.route('/dates')
   .post(function(req, res) {
 
     var date = new Date();    // create a new instance of the date model
-    date.name = req.body.name,
     date.place = req.body.place,
-    date.day = req.body.day,
-    date.stars = req.body.stars,
+    date.people = req.body.people,
+    date.date = req.body.date,
+    date.time = req.body.time,
+    date.star = req.body.star,
     date.back = req.body.back;
 
     // save the bear and check for errors

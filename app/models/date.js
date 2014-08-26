@@ -2,11 +2,12 @@ var mongoose     = require('mongoose');
 var Schema       = mongoose.Schema;
 
 var DateSchema   = new Schema({
-  name: String,
   place: String,
-  day: String,
-  stars: String,
-  back: String
+  people: Number,
+  date: Date,
+  time: String,
+  star: Number,
+  back: Boolean
 });
 
 module.exports = mongoose.model('Date', DateSchema);

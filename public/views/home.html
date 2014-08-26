@@ -2,7 +2,7 @@
   <h1>Find A Place to Date</h1>
 
   How Many Dates Added: {{dates.length}}
-  <p>{{ tagline }}</p>
+  <p ng-controller="MainController as mCtrl">{{ mCtrl.tagline }}</p>
 
   Search: <input ng-model="query">
   Sort: <select ng-model="orderProp">
@@ -14,10 +14,11 @@
 
 <ul>
   <li ng-repeat="date in dates | orderBy:orderProp | filter:query">
-    {{date.name}},
     {{date.place}},
-    {{date.day}},
-    Stars: {{date.stars}},
+    {{date.people}},
+    {{date.date}},
+    {{date.time}},
+    Stars: {{date.star}},
     Back: {{date.back}}
   </li>
 </ul>

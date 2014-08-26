@@ -1,6 +1,6 @@
 angular.module('MainCtrl', []).controller('MainController', function($scope, $http) {
 
-  $scope.tagline = 'Find a Place!';
+  this.tagline = 'Find a Place!';
 
   dates = {};
 
