@@ -5,23 +5,23 @@
 
 <h3>Add New Date</h3>
 <form name="DateForm" ng-controller="DateController as ndCtrl">
-  <li> Name: {{ndCtrl.date.name}}
-    Place: {{ndCtrl.date.place}}
-    Day: {{ndCtrl.date.day}}
-    Stars: {{ndCtrl.date.stars}}
-    Back: {{ndCtrl.date.back}}</li>
-  <input ng-model="ndCtrl.date.name" type="text" placeholder="name"/>
-  <input ng-model="ndCtrl.date.place" type="text" placeholder="place"/>
-  <input ng-model="ndCtrl.date.day" type="text" placeholder="day"/>
-  <select ng-model="ndCtrl.date.stars">
+  <li> Name: {{date.name}}
+    Place: {{date.place}}
+    Day: {{date.day}}
+    Stars: {{date.stars}}
+    Back: {{date.back}}</li>
+  <input ng-model="formData.name" type="text" placeholder="name"/>
+  <input ng-model="formData.place" type="text" placeholder="place"/>
+  <input ng-model="formData.day" type="text" placeholder="day"/>
+  <select ng-model="formData.stars">
     <option value="1"> 1 star </option>
-    <option value="2"> 2 star </option>
-    <option value="3"> 3 star </option>
-    <option value="4"> 4 star </option>
-    <option value="5"> 5 star </option>
+    <option value="2"> 2 stars </option>
+    <option value="3"> 3 stars </option>
+    <option value="4"> 4 stars </option>
+    <option value="5"> 5 stars </option>
   </select>
-  <input ng-model="ndCtrl.date.back" type="checkbox" /> Come Back?
-<button type="button" ng-click="ndCtrl.addPost(ndCtrl)">Add Date</button>
+  <input ng-model="formData.back" type="checkbox" /> Come Back?
+<button type="submit" ng-click="createDate()">Add Date</button>
   <!-- <input type="submit" value="Submit" /> -->
 </form>
 </div>
