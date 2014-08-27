@@ -3,7 +3,6 @@
 
   <p>{{ tagline }}</p>
 
-<h3>Add New Date</h3>
 <form name="DateForm" ng-controller="DateController as ndCtrl" ng-submit="DateForm.$valid && createDate()" novalidate> <!--turn off validation -->
   <li> Place: {{formData.place}}
     People: {{formData.people}}
@@ -23,14 +22,33 @@
   </select>
   <input ng-model="formData.date" type="date" placeholder="day" required/>
   <input ng-model="formData.time" type="time" placeholder="time" required/>
-  <select ng-model="formData.star" required>
+  <!-- <select ng-model="formData.star" required>
     <option value=1> 1 star </option>
     <option value=2> 2 stars </option>
     <option value=3> 3 stars </option>
     <option value=4> 4 stars </option>
     <option value=5> 5 stars </option>
-  </select>
-  <input ng-model="formData.back" type="checkbox" /> Come Back?
+  </select> -->
+
+  <div>
+    <label class="checkbox-inline" >
+        <input ng-model="formData.star"  type="radio" name="star" id="Star1" value="1"> 1 Star
+     </label>
+     <label class="checkbox-inline" >
+        <input ng-model="formData.star" type="radio" name="star" id="Star2" value="2"> 2 Stars
+     </label>
+     <label class="checkbox-inline" >
+        <input ng-model="formData.star" type="radio" name="star" id="Star3" value="3"> 3 Stars
+     </label>
+     <label class="checkbox-inline" >
+        <input ng-model="formData.star" type="radio" name="star" id="Star4" value="4"> 4 Stars
+     </label>
+     <label class="checkbox-inline" >
+        <input ng-model="formData.star" type="radio" name="star" id="Star5" value="1"> 5 Stars
+     </label>
+
+  </div>
+  <input ng-model="formData.back" type="checkbox" /> Would you return?
   <div>DateForm is {{DateForm.$valid}}</div>
   <input type="submit" value="Add Date" />
 </form>
