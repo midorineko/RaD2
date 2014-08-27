@@ -17,16 +17,13 @@
 
 .inputreturnadj{
   color: purple;
-}
-
-.inputreturnadj.green{
+}.green{
   color: green;
-}
-
-.inputreturnadj.red{
+}.red{
   color: #FA787E;
 }
 
-a {
+
+#delete {
   color: white;
 }
