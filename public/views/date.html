@@ -2,4 +2,28 @@
   <h1>Dates</h1>
 
   <p>{{ tagline }}</p>
+
+<h3>Add New Date</h3>
+<form name="DateForm" ng-controller="DateController as ndCtrl">
+  <li> Place: {{date.place}}
+    People: {{date.people}}
+    Date: {{date.date}}
+    Time: {{date.time}}
+    Stars: {{date.star}}
+    Back: {{date.back}}</li>
+  <input ng-model="formData.place" type="text" placeholder="place"/>
+  <input ng-model="formData.people" type="number" placeholder="#people"/>
+  <input ng-model="formData.date" type="date" placeholder="day"/>
+  <input ng-model="formData.time" type="string" placeholder="time"/>
+  <select ng-model="formData.star">
+    <option value=1> 1 star </option>
+    <option value=2> 2 stars </option>
+    <option value=3> 3 stars </option>
+    <option value=4> 4 stars </option>
+    <option value=5> 5 stars </option>
+  </select>
+  <input ng-model="formData.back" type="checkbox" /> Come Back?
+<button type="submit" ng-click="createDate()">Add Date</button>
+  <!-- <input type="submit" value="Submit" /> -->
+</form>
 </div>
