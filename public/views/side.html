@@ -1,7 +1,25 @@
 <div class="jumbotron text-center">
-  <h1>Sides</h1>
+  <h1>Terrible Times</h1>
 
   <p>{{ tagline }}</p>
+
+
+<ul>
+  <li ng-repeat="date in dates | orderBy:orderProp | filter:query | filter:{back: false}">
+    {{date.place}},
+    {{date.people}},
+    {{date.date}},
+    {{date.time}},
+    Stars: {{date.star}},
+    Back: {{date.back}}
+  </li>
+</ul>
+
+
 </div>
+
+
+
+<a href="/delete" id="delete">Delete</a>
 
 

@@ -12,7 +12,15 @@
     Stars: {{formData.star}}
     Back: {{formData.back}}</li>
   <input ng-model="formData.place" type="text" placeholder="place" required/>
-  <input ng-model="formData.people" type="number" placeholder="#people" required/>
+  <select ng-model="formData.people" required>
+    <option value="1"> Solo(1) </option>
+    <option value="2"> Couple(2) </option>
+    <option value="3"> Experimental(3) </option>
+    <option value="4"> Double Date(4) </option>
+    <option value="5-7"> SGroup(5-7) </option>
+    <option value="8-11"> MGroup(8-11) </option>
+    <option value="12+"> MGroup(12+) </option>
+  </select>
   <input ng-model="formData.date" type="date" placeholder="day" required/>
   <input ng-model="formData.time" type="time" placeholder="time" required/>
   <select ng-model="formData.star" required>

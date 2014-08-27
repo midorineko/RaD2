@@ -16,6 +16,7 @@
 
   <!-- ANGULAR CUSTOM -->
   <script src="js/controllers/MainCtrl.js"></script>
+  <script src="js/controllers/DeleteCtrl.js"></script>
   <script src="js/controllers/SideCtrl.js"></script>
   <script src="js/services/SideService.js"></script>
   <script src="js/controllers/DateCtrl.js"></script>
@@ -29,19 +30,19 @@
   <!-- HEADER -->
   <nav class="navbar navbar-inverse">
     <div class="navbar-header">
-      <a class="navbar-brand" href="/">Stencil: Node and Angular</a>
+      <a class="navbar-brand" href="/">Find a Place(FaP)</a>
     </div>
 
     <!-- LINK TO OUR PAGES. ANGULAR HANDLES THE ROUTING HERE -->
     <ul class="nav navbar-nav">
-      <li><a href="/dates">Dates</a></li>
-      <li><a href="/sides">Side</a></li>
+      <li><a href="/dates">Add Date</a></li>
+      <li><a href="/sides">FailDates</a></li>
     </ul>
   </nav>
 
   <!-- ANGULAR DYNAMIC CONTENT -->
-  <div ng-view></div>
 
+  <div ng-view></div>
 </div>
 </body>
 </html>

@@ -3,7 +3,7 @@ var Schema       = mongoose.Schema;
 
 var DateSchema   = new Schema({
   place: String,
-  people: Number,
+  people: String,
   date: Date,
   time: String,
   star: Number,

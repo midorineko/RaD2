@@ -1,5 +1,13 @@
-angular.module('SideCtrl', []).controller('SideController', function($scope) {
+angular.module('SideCtrl', []).controller('SideController', function($scope, $http) {
 
-  $scope.tagline = 'Safety!';
+  $scope.tagline = 'Fail Places!';
+
+  dates = {};
+
+  $http.get('/api/dates').success(function(data){
+    $scope.dates = data
+    console.log(data)
+    $scope.orderProp = 'star';
+  });
 
 });

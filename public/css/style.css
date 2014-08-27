@@ -9,3 +9,7 @@
 .ng-valid.ng-dirty {
   border-color: #78FA89;
 }
+
+a {
+  color: white;
+}
