@@ -10,6 +10,13 @@
   border-color: #78FA89;
 }
 
+.validform.ng-valid.ng-dirty {
+  color: green;
+}
+.validform.ng-invalid {
+  color: red;
+}
+
 a {
   color: white;
 }
