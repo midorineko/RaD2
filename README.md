@@ -12,6 +12,7 @@ http://nodejs.org/
 http://www.mongodb.org/downloads
 
 npm install
+
 npm install -g bower
 
 To run:
