@@ -11,8 +11,8 @@
     Stars: {{formData.star}}
     Returning?: {{formData.back || false}}</li>
 
-  <input ng-model="formData.place" type="text" placeholder="place" required/>
-  <select ng-model="formData.people" required>
+  <input class="inputheightadj" ng-model="formData.place" type="text" placeholder="place" required/>
+  <select class="inputheightadj" ng-model="formData.people" required>
     <option value="1"> Solo(1) </option>
     <option value="2"> Couple(2) </option>
     <option value="3"> Experimental(3) </option>
@@ -41,8 +41,11 @@
         <input ng-model="formData.star" type="radio" name="star" id="Star5" value="1"> 5 Stars
      </label>
   </div>
-  <input ng-model="formData.back" type="checkbox" /> Would you return?
+
  <div>
+  <span class="inputreturnadj" ng-show="DateForm.$valid" ng-show="formData.back">Would you return?</span>
+    <input ng-show="DateForm.$valid" ng-model="formData.back" type="checkbox" />
+    <span class="inputreturnadj2" ng-show="formData.back">YES!</span>
     <span ng-show="DateForm.$invalid"> Not Ready! </span>
     <input ng-show="DateForm.$valid" type="submit" value="Add Date" />
     </div>

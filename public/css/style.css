@@ -1,6 +1,7 @@
 .ng-invalid{
   border-color: lightblue;
 }
+
 .ng-invalid.ng-dirty{
   border-radius: 10px;
   border-color: #FA787E;
@@ -10,11 +11,16 @@
   border-color: #78FA89;
 }
 
-.validform.ng-valid.ng-dirty {
-  color: green;
+.inputheightadj{
+  height: 39px;
 }
-.validform.ng-invalid {
-  color: red;
+
+.inputreturnadj{
+  color: purple;
+}
+
+.inputreturnadj2{
+  color: green;
 }
 
 a {
