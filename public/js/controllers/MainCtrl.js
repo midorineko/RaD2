@@ -6,6 +6,9 @@ angular.module('MainCtrl', []).controller('MainController', function($scope, $ht
 
   $http.get('/api/dates').success(function(data){
     $scope.dates = data
+    console.log(data)
+
+    $scope.orderProp = '-star';
   });
 
 });

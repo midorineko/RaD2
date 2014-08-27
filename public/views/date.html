@@ -4,18 +4,26 @@
   <p>{{ tagline }}</p>
 
 <h3>Add New Date</h3>
-<form name="DateForm" ng-controller="DateController as ndCtrl">
-  <li> Place: {{date.place}}
-    People: {{date.people}}
-    Date: {{date.date}}
-    Time: {{date.time}}
-    Stars: {{date.star}}
-    Back: {{date.back}}</li>
-  <input ng-model="formData.place" type="text" placeholder="place"/>
-  <input ng-model="formData.people" type="number" placeholder="#people"/>
-  <input ng-model="formData.date" type="date" placeholder="day"/>
-  <input ng-model="formData.time" type="string" placeholder="time"/>
-  <select ng-model="formData.star">
+<form name="DateForm" ng-controller="DateController as ndCtrl" ng-submit="DateForm.$valid && createDate()" novalidate> <!--turn off validation -->
+  <li> Place: {{formData.place}}
+    People: {{formData.people}}
+    Date: {{formData.date}}
+    Time: {{formData.time}}
+    Stars: {{formData.star}}
+    Back: {{formData.back}}</li>
+  <input ng-model="formData.place" type="text" placeholder="place" required/>
+  <select ng-model="formData.people" required>
+    <option value="1"> Solo(1) </option>
+    <option value="2"> Couple(2) </option>
+    <option value="3"> Experimental(3) </option>
+    <option value="4"> Double Date(4) </option>
+    <option value="5-7"> SGroup(5-7) </option>
+    <option value="8-11"> MGroup(8-11) </option>
+    <option value="12+"> MGroup(12+) </option>
+  </select>
+  <input ng-model="formData.date" type="date" placeholder="day" required/>
+  <input ng-model="formData.time" type="time" placeholder="time" required/>
+  <select ng-model="formData.star" required>
     <option value=1> 1 star </option>
     <option value=2> 2 stars </option>
     <option value=3> 3 stars </option>
@@ -23,7 +31,7 @@
     <option value=5> 5 stars </option>
   </select>
   <input ng-model="formData.back" type="checkbox" /> Come Back?
-<button type="submit" ng-click="createDate()">Add Date</button>
-  <!-- <input type="submit" value="Submit" /> -->
+  <div>DateForm is {{DateForm.$valid}}</div>
+  <input type="submit" value="Add Date" />
 </form>
 </div>

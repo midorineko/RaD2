@@ -18,6 +18,11 @@
     .when('/sides', {
       templateUrl: 'views/side.html',
       controller: 'SideController'
+    })
+
+    .when('/delete', {
+      templateUrl: 'views/delete.html',
+      controller: 'DeleteController'
     });
 
   $locationProvider.html5Mode(true);

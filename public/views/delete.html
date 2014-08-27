@@ -1,0 +1,11 @@
+<ul>
+  <li ng-repeat="date in dates | orderBy:orderProp | filter:query">
+    {{date.place}},
+    {{date.people}},
+    {{date.date}},
+    {{date.time}},
+    Stars: {{date.star}},
+    Back: {{date.back}}
+    <button ng-click="delete(date._id)" value="Remove"></button>
+  </li>
+</ul>

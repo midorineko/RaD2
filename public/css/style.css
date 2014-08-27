@@ -1,0 +1,15 @@
+.ng-invalid{
+  border-color: lightblue;
+}
+.ng-invalid.ng-dirty{
+  border-radius: 10px;
+  border-color: #FA787E;
+}
+
+.ng-valid.ng-dirty {
+  border-color: #78FA89;
+}
+
+a {
+  color: white;
+}
