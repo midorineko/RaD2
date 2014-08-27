@@ -19,8 +19,12 @@
   color: purple;
 }
 
-.inputreturnadj2{
+.inputreturnadj.green{
   color: green;
+}
+
+.inputreturnadj.red{
+  color: #FA787E;
 }
 
 a {

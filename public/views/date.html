@@ -43,10 +43,13 @@
   </div>
 
  <div>
-  <span class="inputreturnadj" ng-show="DateForm.$valid" ng-show="formData.back">Would you return?</span>
+  <span class="inputreturnadj purple" ng-show="DateForm.$valid" ng-show="formData.back">Would you return?</span>
     <input ng-show="DateForm.$valid" ng-model="formData.back" type="checkbox" />
-    <span class="inputreturnadj2" ng-show="formData.back">YES!</span>
-    <span ng-show="DateForm.$invalid"> Not Ready! </span>
+    <span ng-show="DateForm.$valid">
+      <span class="inputreturnadj red" ng-hide="formData.back">NO!</span>
+    </span>
+    <span class="inputreturnadj green" ng-show="formData.back">YES!</span>
+    <span class="inputreturnadj2" ng-show="formData.back.$pristine">sexy</span>
     <input ng-show="DateForm.$valid" type="submit" value="Add Date" />
     </div>
 </form>
