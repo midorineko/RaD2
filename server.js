@@ -58,7 +58,7 @@ router.route('/dates')
     date.date = req.body.date,
     date.time = req.body.time,
     date.star = req.body.star,
-    date.back = req.body.back;
+    date.back = req.body.back || false;
 
     // save the bear and check for errors
     date.save(function(err) {
