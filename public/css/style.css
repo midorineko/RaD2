@@ -27,3 +27,6 @@
 #delete {
   color: white;
 }
+#delete:hover{
+  color: purple;
+}
