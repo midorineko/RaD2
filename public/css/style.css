@@ -1,6 +1,7 @@
 .ng-invalid{
   border-color: lightblue;
 }
+
 .ng-invalid.ng-dirty{
   border-radius: 10px;
   border-color: #FA787E;
@@ -10,6 +11,22 @@
   border-color: #78FA89;
 }
 
-a {
+.inputheightadj{
+  height: 39px;
+}
+
+.inputreturnadj{
+  color: purple;
+}.green{
+  color: green;
+}.red{
+  color: #FA787E;
+}
+
+
+#delete {
   color: white;
+}
+#delete:hover{
+  color: purple;
 }
