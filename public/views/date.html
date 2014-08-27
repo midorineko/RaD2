@@ -4,13 +4,13 @@
   <p>{{ tagline }}</p>
 
 <h3>Add New Date</h3>
-<form name="DateForm" ng-controller="DateController as ndCtrl" novalidate> <!--turn off validation -->
-  <li> Place: {{date.place}}
-    People: {{date.people}}
-    Date: {{date.date}}
-    Time: {{date.time}}
-    Stars: {{date.star}}
-    Back: {{date.back}}</li>
+<form name="DateForm" ng-controller="DateController as ndCtrl" ng-submit="DateForm.$valid && createDate()" novalidate> <!--turn off validation -->
+  <li> Place: {{formData.place}}
+    People: {{formData.people}}
+    Date: {{formData.date}}
+    Time: {{formData.time}}
+    Stars: {{formData.star}}
+    Back: {{formData.back}}</li>
   <input ng-model="formData.place" type="text" placeholder="place" required/>
   <input ng-model="formData.people" type="number" placeholder="#people" required/>
   <input ng-model="formData.date" type="date" placeholder="day" required/>
@@ -23,8 +23,7 @@
     <option value=5> 5 stars </option>
   </select>
   <input ng-model="formData.back" type="checkbox" /> Come Back?
-  <div>form is {{DateForm.$valid}}</div>
-<button type="submit" ng-click="createDate()">Add Date</button>
-  <!-- <input type="submit" value="Submit" /> -->
+  <div>DateForm is {{DateForm.$valid}}</div>
+  <input type="submit" value="Add Date" />
 </form>
 </div>
