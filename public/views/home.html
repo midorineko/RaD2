@@ -12,15 +12,23 @@
     <option value="-star">Stars</option>
   </select>
 
+  <div class="col-md-12"><br></div>
 
-<ul>
-  <li ng-repeat="date in dates | orderBy:orderProp | filter:query | filter:{back: true}">
-    {{date.place}},
-    {{date.people}},
-    {{date.date}},
-    {{date.time}},
-    Stars: {{date.star}},
-    Back: {{date.back}}
-  </li>
-</ul>
+<table style="width:100%">
+  <tr>
+    <td class="homeTB">Place</td>
+    <td class="homeTB">#Group</td>
+    <td class="homeTB">Date</td>
+    <td class="homeTB">Time</td>
+    <td class="homeTB">Stars</td>
+  </tr>
+  <tr ng-repeat="date in dates | orderBy:orderProp | filter:query | filter:{back: true}">
+    <td>{{date.place}}</td>
+    <td>{{date.people}}</td>
+    <td>{{date.date | date}}</td>
+    <td>{{date.time}}</td>
+    <td>{{date.star}}</td>
+  </div>
+  </tr>
+
 </div>

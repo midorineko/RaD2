@@ -23,8 +23,16 @@
   color: #FA787E;
 }
 
+table,th,td{
+  border:1px solid black;
+}
 
-#delete {
+.homeTB {
+  color: red;
+}
+
+
+#delete{
   color: white;
 }
 #delete:hover{
