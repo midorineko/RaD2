@@ -3,21 +3,33 @@
 
   <p>{{ tagline }}</p>
 
+ Search Places: <input ng-model="query">
+  Sort: <select ng-model="orderProp">
+    <option value="place">Alphabetical</option>
+    <option value="time">Early</option>
+    <option value="-time">Later</option>
+    <option value="-star">Stars</option>
+  </select>
 
-<ul>
-  <li ng-repeat="date in dates | orderBy:orderProp | filter:query | filter:{back: false}">
-    {{date.place}},
-    {{date.people}},
-    {{date.date}},
-    {{date.time}},
-    Stars: {{date.star}},
-    Back: {{date.back}}
-  </li>
-</ul>
+    <div class="col-md-12"><br></div>
 
-
+<table style="width:100%">
+  <tr>
+    <td class="homeTB">Place</td>
+    <td class="homeTB">#Group</td>
+    <td class="homeTB">Date</td>
+    <td class="homeTB">Time</td>
+    <td class="homeTB">Stars</td>
+  </tr>
+  <tr ng-repeat="date in dates | orderBy:orderProp | filter:query | filter:{back: false}">
+    <td>{{date.place}}</td>
+    <td>{{date.people}}</td>
+    <td>{{date.date | date}}</td>
+    <td>{{date.time}}</td>
+    <td>{{date.star}}</td>
+  </tr>
+</table>
 </div>
-
 
 
 <a href="/delete" id="delete">Delete</a>

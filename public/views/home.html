@@ -4,7 +4,7 @@
   How Many Dates Added: {{dates.length}}
   <p ng-controller="MainController as mCtrl">{{ mCtrl.tagline }}</p>
 
-  Search: <input ng-model="query">
+  Search Places: <input ng-model="query">
   Sort: <select ng-model="orderProp">
     <option value="place">Alphabetical</option>
     <option value="time">Early</option>
@@ -28,7 +28,7 @@
     <td>{{date.date | date}}</td>
     <td>{{date.time}}</td>
     <td>{{date.star}}</td>
-  </div>
   </tr>
+</table>
 
 </div>
